@@ -1,5 +1,6 @@
 package com.barretoga.choosehub.config;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -17,7 +18,8 @@ import java.util.function.Function;
 @Service
 public class JwtService {
 
-    private static final String SECRET_KEY = "776ff49cacbf4c5184ee5b06916d5bc889151d011bb34adb4bb1c88ebac56c5a";
+    private static final Dotenv dotenv = Dotenv.load();
+    private static final String SECRET_KEY = dotenv.get("JWT_SECRET_KEY");
 
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
