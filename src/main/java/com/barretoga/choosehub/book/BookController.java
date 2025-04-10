@@ -1,5 +1,6 @@
 package com.barretoga.choosehub.book;
 
+import com.barretoga.choosehub.book.dto.BookDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,13 +17,13 @@ public class BookController {
     private final BookService bookService;
 
     @GetMapping
-    public List<Book> listBooks() {
-        return bookService.listBooks();
+    public List<BookDTO> listBooks() {
+        return bookService.listBooksByUser();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Book> getBookById(@PathVariable Long id) {
-        Optional<Book> book = bookService.getBookById(id);
+    public ResponseEntity<BookDTO> getBookById(@PathVariable Long id) {
+        Optional<BookDTO> book = bookService.getBookById(id);
         return book.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
