@@ -14,12 +14,6 @@ Choosehub is a recommendation app based on users registered logs.
 - [ ] Badge system
 
 ## Technologies used
-- Next.js
-- Shadcn
-- Tailwindcss
-- r3f-forcegraph (Threejs)
-- React hook form
-- Yup
-- Redux
-- Tanstack Query
-  
+- Java
+- Springboot
+- Postgresql
