@@ -16,4 +16,6 @@ Choosehub is a recommendation app based on users registered logs.
 ## Technologies used
 - Java
 - Springboot
+- Maven
+- Lombok
 - Postgresql
